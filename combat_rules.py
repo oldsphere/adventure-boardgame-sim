@@ -1,7 +1,7 @@
 import numpy as np
 import random
 from typing import List
-from common.colors import Color as colors
+from colors import Color as c
 import copy
 
 class Entity:
@@ -99,21 +99,21 @@ class RoundStats:
         attacker_label = f'{self.attacker.name}({self.attacker_initial_life})'
         defender_label = f'{self.defender.name}({self.defender_initial_life})'
         print(
-            f'Atacante {colors.YELLOW}{attacker_label: <15}{colors.END} obtiene:    '
-            f'{colors.RED}{self.attacker_total_attack} X{colors.END}'
+            f'Atacante {c.YELLOW}{attacker_label: <15}{c.END} obtiene:    '
+            f'{c.RED}{self.attacker_total_attack} X{c.END}'
             f' y '
-            f'{colors.BLUE}{self.attacker_total_defense} O{colors.END}'
+            f'{c.BLUE}{self.attacker_total_defense} O{c.END}'
             '\n'
 
-            f'Defensor {colors.YELLOW}{defender_label: <15}{colors.END} obtiene:    '
-            f'{colors.BLUE}{self.defender_total_defense} O{colors.END}'
+            f'Defensor {c.YELLOW}{defender_label: <15}{c.END} obtiene:    '
+            f'{c.BLUE}{self.defender_total_defense} O{c.END}'
             f' y '
-            f'{colors.RED}{self.defender_total_attack} X{colors.END}'
+            f'{c.RED}{self.defender_total_attack} X{c.END}'
             '\n'
             f'{"": <37}'
-            f'{colors.BOLD}{self.attacker_damage_done}{colors.END}'
+            f'{c.BOLD}{self.attacker_damage_done}{c.END}'
             '     '
-            f'{colors.BOLD}{self.defender_damage_done}{colors.END}'
+            f'{c.BOLD}{self.defender_damage_done}{c.END}'
             '\n'
         )
         
@@ -154,7 +154,7 @@ class CombatStats:
 
         role = 'defender' if self.winner == self.rounds[-1].defender else 'Attacker'
         print(
-            f'Winner: {colors.YELLOW}{self.winner.name} ({role}) {colors.END}\n'
+            f'Winner: {c.YELLOW}{self.winner.name} ({role}) {c.END}\n'
             f'nRounds: {self.nRounds}\n'
             '\n'
             f'Attacker Statistics:\n'
